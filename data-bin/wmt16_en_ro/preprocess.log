@@ -1,0 +1,14 @@
+Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bpe=None, cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/wmt16_en_ro', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=True, log_format=None, log_interval=1000, lr_scheduler='fixed', memory_efficient_fp16=False, min_loss_scale=0.0001, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=False, optimizer='nag', padding_factor=8, seed=1, source_lang='en', srcdict=None, target_lang='ro', task='translation', tensorboard_logdir='', testpref='examples/translation/wmt16_en_ro/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, trainpref='examples/translation/wmt16_en_ro/train', user_dir=None, validpref='examples/translation/wmt16_en_ro/valid', workers=20)
+[en] Dictionary: 34975 types
+[en] examples/translation/wmt16_en_ro/train.en: 608319 sents, 16719262 tokens, 0.0% replaced by <unk>
+[en] Dictionary: 34975 types
+[en] examples/translation/wmt16_en_ro/valid.en: 1999 sents, 58930 tokens, 0.0594% replaced by <unk>
+[en] Dictionary: 34975 types
+[en] examples/translation/wmt16_en_ro/test.en: 1999 sents, 56107 tokens, 0.025% replaced by <unk>
+[ro] Dictionary: 34975 types
+[ro] examples/translation/wmt16_en_ro/train.ro: 608319 sents, 17295176 tokens, 0.0% replaced by <unk>
+[ro] Dictionary: 34975 types
+[ro] examples/translation/wmt16_en_ro/valid.ro: 1999 sents, 63529 tokens, 0.0315% replaced by <unk>
+[ro] Dictionary: 34975 types
+[ro] examples/translation/wmt16_en_ro/test.ro: 1999 sents, 59626 tokens, 0.0319% replaced by <unk>
+Wrote preprocessed data to data-bin/wmt16_en_ro
