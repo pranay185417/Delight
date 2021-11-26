@@ -148,7 +148,9 @@ class SingleHeadAttention(nn.Module):
         else:
             raise NotImplementedError
 
-        q *= self.scaling
+        # q *= self.scaling
+        temp = q
+        q = temp * self.scaling
 
         q = q.contiguous().transpose(0, 1)
 
