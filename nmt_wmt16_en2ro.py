@@ -16,6 +16,8 @@ def run_experiment(args):
     data_dir = args.data_dir
     results_dir = args.save_dir
 
+    max_epoch = args.max_epoch
+
     # scale LR
     d_m = args.d_m
 
@@ -58,7 +60,7 @@ def run_experiment(args):
                '--criterion label_smoothed_cross_entropy --label-smoothing 0.1 --min-lr 1e-09 '
                '--update-freq {} --keep-last-epochs 10 '
                '--ddp-backend=no_c10d --max-tokens {} '
-               '--max-update {} --warmup-updates {} '
+               '--me {} --max-update {} --warmup-updates {} '
                '--lr-scheduler linear --warmup-init-lr 1e-7 --lr {} --min-lr 1e-9 '
                '--save-dir {} '
                '--distributed-world-size {} --distributed-port 50786 '
@@ -66,7 +68,7 @@ def run_experiment(args):
                '--delight-enc-min-depth 4 --delight-enc-max-depth 8 --delight-enc-width-mult 2 '
                '--delight-dec-min-depth 4 --delight-dec-max-depth 8 --delight-dec-width-mult 2 '
                '| tee -a {}'.format(data_dir,
-                                    update_freq, max_tokens,
+                                    update_freq, max_tokens, max_epoch,
                                     max_update, warmup_update, max_lr,
                                     results_dir,
                                     num_gpus,
@@ -92,6 +94,7 @@ if __name__ == '__main__':
     parser.add_argument('--num-gpus', type=int, default=1, help='num. of GPUs')
     parser.add_argument('--save-dir', type=str, default='./results_wmt16_en2ro', help='Results directory')
 
+    parser.add_argument('--max-epoch', type=int, default=1, help='max num. of epochs')
 
     args = parser.parse_args()
 
